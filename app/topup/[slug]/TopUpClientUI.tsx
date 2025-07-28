@@ -6,7 +6,6 @@ import { Gamepad2, Loader2, CheckCircle, XCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-// Definisikan tipe data
 type Game = {
   id: number;
   name: string;
@@ -120,7 +119,7 @@ export default function TopUpClientUI({ game, products }: TopUpClientUIProps) {
                     <input
                     type="text"
                     placeholder="User ID"
-                    className="input flex-grow p-2 border rounded bg-background w-full"
+                    className="flex-grow p-3 border border-gray-600 rounded-md bg-gray-800 text-white placeholder:text-gray-400 w-full focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors"
                     value={userId}
                     onChange={(e) => { setUserId(e.target.value); setValidationStatus('idle'); setUsername(null); }}
                     />
@@ -128,7 +127,7 @@ export default function TopUpClientUI({ game, products }: TopUpClientUIProps) {
                     <input
                         type="text"
                         placeholder="Zone ID"
-                        className="input p-2 border rounded bg-background w-full sm:w-1/3"
+                        className="p-3 border border-gray-600 rounded-md bg-gray-800 text-white placeholder:text-gray-400 w-full sm:w-1/3 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-colors"
                         value={zoneId}
                         onChange={(e) => { setZoneId(e.target.value); setValidationStatus('idle'); setUsername(null); }}
                     />
@@ -162,7 +161,7 @@ export default function TopUpClientUI({ game, products }: TopUpClientUIProps) {
                         <button
                           key={product.id}
                           onClick={() => setSelectedProduct(product)}
-                          className={`p-4 border rounded-lg hover:border-primary transition-all duration-300 flex items-center gap-3 ${selectedProduct?.id === product.id ? 'border-primary ring-2 ring-primary bg-primary-foreground' : 'bg-background'}`}
+                          className={`p-4 border rounded-lg hover:border-blue-500 transition-all duration-300 flex items-center gap-3 ${selectedProduct?.id === product.id ? 'border-blue-500 ring-2 ring-blue-500 bg-gray-700' : 'border-gray-600 bg-gray-800 hover:bg-gray-700'}`}
                         >
                           <Image
                             src={diamondIconUrl}
@@ -192,7 +191,7 @@ export default function TopUpClientUI({ game, products }: TopUpClientUIProps) {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                  <button
                     onClick={() => setSelectedPayment('QRIS')}
-                    className={`p-4 border rounded-lg hover:border-primary transition-all duration-300 flex items-center justify-center ${selectedPayment === 'QRIS' ? 'border-primary ring-2 ring-primary bg-primary-foreground' : 'bg-background'}`}
+                    className={`p-4 border rounded-lg hover:border-blue-500 transition-all duration-300 flex items-center justify-center ${selectedPayment === 'QRIS' ? 'border-blue-500 ring-2 ring-blue-500 bg-gray-700' : 'border-gray-600 bg-gray-800 hover:bg-gray-700'}`}
                   >
                     <p className="font-semibold">QRIS</p>
                   </button>
@@ -204,7 +203,7 @@ export default function TopUpClientUI({ game, products }: TopUpClientUIProps) {
         <div className="lg:col-span-1">
             <Card className="sticky top-24">
                 <CardContent className="p-6">
-                    <h2 className="text-xl font-bold mb-4 border-b pb-4">Ringkasan Pesanan</h2>
+                    <h2 className="text-xl font-bold mb-4 border-b border-gray-600 pb-4">Ringkasan Pesanan</h2>
                     <div className="space-y-4 text-sm">
                         <div className="flex justify-between">
                             <span className="text-muted-foreground">Nickname:</span>
@@ -218,7 +217,7 @@ export default function TopUpClientUI({ game, products }: TopUpClientUIProps) {
                             <span className="text-muted-foreground">Pembayaran:</span>
                             <span className="font-semibold">{selectedPayment || '-'}</span>
                         </div>
-                        <div className="flex justify-between text-lg font-bold border-t pt-4">
+                        <div className="flex justify-between text-lg font-bold border-t border-gray-600 pt-4">
                             <span>Total Bayar:</span>
                             <span>Rp {selectedProduct ? selectedProduct.price.toLocaleString('id-ID') : '0'}</span>
                         </div>
