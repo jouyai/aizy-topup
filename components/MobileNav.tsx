@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Search, Gamepad2 } from 'lucide-react';
+import { Menu, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -42,7 +42,6 @@ export function MobileNav({ user, onLogout, loading }: MobileNavProps) {
         <SheetContent side="right" className="flex flex-col p-6">
           <SheetHeader>
             <div className="flex items-center gap-2">
-              <Gamepad2 className="h-6 w-6 text-primary" />
               <span className="text-lg font-bold">Aizy Topup</span>
             </div>
           </SheetHeader>

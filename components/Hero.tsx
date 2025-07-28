@@ -5,13 +5,11 @@ import { Button } from "@/components/ui/button";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
 export default function Hero() {
-  <TypewriterEffect
-    words={[
-      { text: "Topup", className: "text-primary font-bold" },
-      { text: "Game", className: "text-blue-500 font-semibold" },
-      { text: "Murah!", className: "text-green-400 font-bold" },
-    ]}
-  />;
+  const words = [
+    { text: "Topup", className: "text-primary font-bold" },
+    { text: "Game", className: "text-primary font-bold" },
+    { text: "Murah!", className: "text-primary font-bold" },
+  ];
 
   return (
     <section className="w-full min-h-[80vh] flex flex-col justify-center items-center px-6 text-center">

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { type User } from '@supabase/supabase-js';
-import { Gamepad2, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MobileNav } from "./MobileNav";
@@ -50,7 +50,6 @@ export function Navbar() {
         {/* Kiri: Logo & Navigasi */}
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">
-            <Gamepad2 className="h-6 w-6 text-primary" />
             <span className="font-semibold text-lg tracking-tight">Aizy Topup</span>
           </Link>
 

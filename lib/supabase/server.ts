@@ -1,12 +1,9 @@
-// lib/supabase/server.ts
-
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
-// This needs to be 'next/headers' not 'next/header'
 import { cookies } from 'next/headers'
 
-// Make the function async to use await
+// Fungsi ini HARUS async
 export async function createClient() { 
-  // Await the cookies() function to get the actual cookie store
+  // Anda HARUS menggunakan 'await' di sini untuk mendapatkan cookie store
   const cookieStore = await cookies()
 
   return createServerClient(
@@ -21,14 +18,14 @@ export async function createClient() {
           try {
             cookieStore.set({ name, value, ...options })
           } catch (error) {
-            // This can be ignored if you have middleware refreshing user sessions.
+            // Ini bisa diabaikan jika Anda memiliki middleware yang me-refresh sesi pengguna.
           }
         },
         remove(name: string, options: CookieOptions) {
           try {
             cookieStore.set({ name, value: '', ...options })
           } catch (error) {
-            // This can be ignored if you have middleware refreshing user sessions.
+            // Ini bisa diabaikan jika Anda memiliki middleware yang me-refresh sesi pengguna.
           }
         },
       },

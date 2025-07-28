@@ -1,5 +1,3 @@
-// file: app/topup/[slug]/TopUpClientUI.tsx
-
 'use client';
 
 import React, { useState } from 'react';
